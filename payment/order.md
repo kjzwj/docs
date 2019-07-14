@@ -14,7 +14,12 @@ $result = $app->order->unify([
     'spbill_create_ip' => '123.12.12.123', // 可选，如不传该参数，SDK 将会自动获取相应 IP 地址
     'notify_url' => 'https://pay.weixin.qq.com/wxpay/pay.action', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
     'trade_type' => 'JSAPI', // 请对应换成你的支付方式对应的值类型
-    'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+    'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o', // 普通商户只需要openid
+    // 服务商模式下需要以下参数，并要把 openid 设置为空
+    'openid' => '',
+    'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+    'sub_appid' => 'wx7894sdfsd0000000',
+    'sub_mch_id' => '15112300000',
 ]);
 
 // $result:
